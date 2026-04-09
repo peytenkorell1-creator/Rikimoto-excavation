@@ -1,125 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rikimoto Excavation LLC | Watertown, SD</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Rikimoto Excavation LLC | Watertown, SD</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: #222;
-      line-height: 1.6;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
 
-    header {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-      url('https://images.unsplash.com/photo-1581093458791-9d42e6d8a3f4') center/cover;
-      color: white;
-      padding: 100px 20px;
-      text-align: center;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
 
-    header h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
-    }
+body {
+  background: #0b0b0b;
+  color: white;
+}
 
-    header p {
-      font-size: 18px;
-      margin-bottom: 20px;
-    }
+/* NAV */
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: rgba(0,0,0,0.85);
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
 
-    .btn {
-      background: #f4b400;
-      color: black;
-      padding: 12px 20px;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 5px;
-    }
+nav h1 {
+  font-size: 18px;
+  color: #f5b301;
+}
 
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 14px;
+}
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
+nav a:hover {
+  color: #f5b301;
+}
 
-    .card {
-      background: #f5f5f5;
-      padding: 20px;
-      border-radius: 10px;
-    }
+/* HERO */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.85)),
+  url('https://images.unsplash.com/photo-1602526215302-9d2b5e6b2d7c') center/cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
 
-    .highlight {
-      background: #111;
-      color: white;
-      text-align: center;
-      padding: 60px 20px;
-    }
+.hero h2 {
+  font-size: 52px;
+  color: #f5b301;
+  animation: fadeIn 1s ease-in;
+}
 
-    footer {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-  </style>
+.hero p {
+  font-size: 18px;
+  max-width: 700px;
+  margin-top: 15px;
+  color: #ddd;
+}
+
+.btn {
+  margin-top: 25px;
+  background: #f5b301;
+  color: black;
+  padding: 14px 26px;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: white;
+}
+
+/* SECTIONS */
+section {
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+h2 {
+  color: #f5b301;
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #151515;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #2a2a2a;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: #f5b301;
+}
+
+/* GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 10px;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* CTA */
+.cta {
+  background: #f5b301;
+  color: black;
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.cta h2 {
+  color: black;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #000;
+  color: #777;
+  font-size: 13px;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+</style>
 </head>
 
 <body>
 
-<header>
-  <h1>Rikimoto Excavation LLC</h1>
-  <p>Reliable Excavation Services in Watertown, SD</p>
-  <a class="btn" href="tel:6052377690">Call Now for a Free Estimate</a>
-</header>
+<!-- NAV -->
+<nav>
+  <h1>Rikimoto Excavation</h1>
+  <div>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#work">Work</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
 
-<section>
+<!-- HERO -->
+<div class="hero">
+  <h2>Precision Excavation Done Right</h2>
+  <p>Watertown, SD | Over 10 Years Experience | Reliable Site Work, Grading, Trenching & Land Clearing</p>
+  <a class="btn" href="tel:6052377690">📞 Call for Free Estimate</a>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
   <h2>About Us</h2>
   <p>
-    With over 10 years of experience, Rikimoto Excavation LLC delivers high-quality excavation work with speed, precision, and reliability.
-    We are committed to doing the job right the first time and exceeding customer expectations on every project.
+    Rikimoto Excavation LLC is a locally trusted excavation company serving Watertown and surrounding areas.
+    We specialize in residential and commercial site preparation with a focus on precision, safety, and efficiency.
+    Every project is handled with professionalism and pride.
   </p>
 </section>
 
-<section>
+<!-- SERVICES -->
+<section id="services">
   <h2>Our Services</h2>
-  <div class="services">
+  <div class="grid">
     <div class="card">Site Preparation</div>
     <div class="card">Land Clearing</div>
     <div class="card">Grading & Leveling</div>
     <div class="card">Trenching</div>
     <div class="card">Foundation Digging</div>
-    <div class="card">Drainage Work</div>
+    <div class="card">Drainage Systems</div>
   </div>
 </section>
 
-<section class="highlight">
-  <h2>Fast • Reliable • Professional</h2>
-  <p>Free Estimates Available — Call Today</p>
-  <a class="btn" href="tel:6052377690">605-237-7690</a>
+<!-- WORK -->
+<section id="work">
+  <h2>Recent Work</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1581093458791-9d42e6d8a3f4" />
+    <img src="https://images.unsplash.com/photo-1602526215302-9d2b5e6b2d7c" />
+    <img src="https://images.unsplash.com/photo-1590247813693-5541d1c609fd" />
+  </div>
 </section>
 
+<!-- WHY -->
 <section>
-  <h2>Why Choose Us?</h2>
-  <ul>
-    <li>✔ 10+ Years Experience</li>
-    <li>✔ Free Estimates</li>
-    <li>✔ High-Quality Work</li>
-    <li>✔ Timely Project Completion</li>
-  </ul>
+  <h2>Why Choose Us</h2>
+  <div class="grid">
+    <div class="card">✔ 10+ Years Experience</div>
+    <div class="card">✔ Free Estimates</div>
+    <div class="card">✔ Fast Turnaround</div>
+    <div class="card">✔ Professional Equipment</div>
+    <div class="card">✔ Locally Owned</div>
+    <div class="card">✔ Trusted Reputation</div>
+  </div>
 </section>
 
+<!-- CTA -->
+<div class="cta" id="contact">
+  <h2>Need Excavation Work?</h2>
+  <p>Call now for a fast, free estimate in Watertown & surrounding areas.</p>
+  <br/>
+  <a class="btn" href="tel:6052377690">Call 605-237-7690</a>
+</div>
+
+<!-- FOOTER -->
 <footer>
-  <p>© 2026 Rikimoto Excavation LLC | Watertown, SD</p>
+  © 2026 Rikimoto Excavation LLC | Watertown, South Dakota
 </footer>
 
 </body>
